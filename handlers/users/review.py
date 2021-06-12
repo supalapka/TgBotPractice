@@ -7,7 +7,7 @@ from aiogram.dispatcher.filters import Command
 from states.review import Review
 
 
-@dp.message_handler(Command("review"), state=None)
+@dp.message_handler(text="Send Review \u2B50", state=None)
 async def enter_test(message: types.Message):
     await message.answer("Hey!\nPlease send the review of my work to help me.\n(it's not public)")
     await Review.Q1.set()
